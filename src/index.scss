@@ -1,0 +1,50 @@
+@import "./scss/colors";
+@import "./scss/fonts";
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  // height: 100vh;
+  background-color: #17181b;
+  font-family: $font-family;
+  color: $color-white;
+
+  // scrollbar-width: 50px;
+}
+
+html {
+  font-size: 62.5%;
+  scrollbar-width: 1.3rem;
+  scrollbar-color: #cd3538 $color-theme-bg-color;
+}
+
+a {
+  text-decoration: none;
+  color: $color-white;
+}
+
+button {
+  cursor: pointer;
+}
+
+body::-webkit-scrollbar {
+  width: 1.3rem;
+}
+
+body::-webkit-scrollbar-track {
+  margin-block: 0.5em;
+  border-radius: 10px;
+}
+
+body::-webkit-scrollbar-thumb {
+  background-color: #cd3538;
+  border-radius: 10px;
+
+  &:active {
+    background-color: #a82325;
+  }
+}

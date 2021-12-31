@@ -1,0 +1,26 @@
+@import "../../../scss/colors";
+@import "../../../scss/fonts";
+
+.search-dropdown-menu {
+  display: none;
+  list-style: none;
+  background-color: blue;
+  background-color: rgba(white, 0.9);
+  position: absolute;
+  top: 2.4rem;
+  width: 100%;
+  margin-left: -0.7rem;
+
+  &-item {
+    text-align: left;
+    padding-left: 0.7rem;
+    &:hover {
+      color: white;
+      background-color: $color-nav-btn-hover;
+    }
+  }
+
+  &.form-btn-active {
+    display: block;
+  }
+}

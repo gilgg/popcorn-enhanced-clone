@@ -1,0 +1,62 @@
+@import "../../../scss/colors";
+
+.genre-sub-menu {
+  display: none;
+  list-style: none;
+  // opacity: 0.9;
+  min-width: 144px;
+  max-height: 300px;
+  overflow-y: auto;
+  position: absolute;
+  top: 36px;
+  left: -2px;
+  background-color: $color-theme-bg-color;
+  border-radius: 2px;
+  scrollbar-width: thin;
+  scrollbar-color: $color-nav-btn-hover $color-theme-bg-color;
+  transition: 0.2s;
+
+  &-item {
+    padding: 0.2rem 0rem;
+    padding-left: 1rem;
+    font-size: 1.2rem;
+
+    &:hover {
+      background-color: $color-nav-btn-hover;
+      background-color: rgba(white, 0.7);
+
+      a {
+        color: black;
+        display: block;
+      }
+    }
+  }
+}
+
+.parent-sub-menu.active .genre-sub-menu {
+  display: block;
+  opacity: 1;
+}
+
+.genre-sub-menu::-webkit-scrollbar {
+  width: 7px;
+}
+
+.genre-sub-menu::-webkit-scrollbar-track {
+  margin-block: 0.3em;
+  // margin-top: 100px;
+  // margin-bottom: 100px;
+}
+
+.genre-sub-menu::-webkit-scrollbar-thumb {
+  background-color: $color-nav-btn-hover;
+  border-radius: 10px;
+  height: 30px;
+  width: 30px;
+  margin-top: 100px;
+  margin-bottom: 100px;
+
+  &:active {
+    background-color: #265aa3;
+  }
+}

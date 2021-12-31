@@ -1,0 +1,24 @@
+.trailer-modal {
+  background-color: rgba(0,0,0,0.95);
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  top: 0;
+  z-index: 5;
+  display: none;
+
+  &.modalActive {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  &-close-icon {
+    position: absolute;
+    top: 100px;
+    right: 10rem;
+    font-size: 5rem;
+    color: white;
+    cursor: pointer;
+  }
+}

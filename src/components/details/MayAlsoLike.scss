@@ -1,0 +1,81 @@
+@import "../../scss/colors";
+@import "../../scss/fonts";
+
+.may-also-like-container {
+  position: relative;
+  margin-top: 2rem;
+  padding-bottom: 2rem;
+
+  h1 {
+    margin-bottom: 1rem;
+    font-size: 2.5rem;
+  }
+
+  button {
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    top: 145px;
+    padding: 1rem;
+    background-color: white;
+    border: none;
+    border-radius: 10px;
+    transition: 0.2s;
+
+    &:hover {
+      background-color: rgba(white, 0.7);
+    }
+  }
+
+  &-btn-icon {
+    font-size: 2.6rem;
+  }
+
+  &-btn-left {
+    left: -73px;
+  }
+
+  &-btn-right {
+    right: -73px;
+  }
+}
+
+.may-also-like {
+  overflow-x: auto;
+  margin-top: 1rem;
+
+  &-suggestions {
+    display: flex;
+    cursor: grab;
+
+    .movie-card {
+      margin-right: 1.5rem;
+      margin-bottom: 1.5rem;
+    }
+  }
+
+  &::-webkit-scrollbar {
+    height: 8px;
+  }
+
+  &::-webkit-scrollbar-track {
+    margin-block: 0.3em;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background-color: $color-nav-btn-hover;
+    background-color: #cd3538;
+
+    border-radius: 10px;
+    height: 30px;
+    width: 30px;
+    margin-top: 100px;
+    margin-bottom: 100px;
+
+    &:active {
+      background-color: #265aa3;
+      background-color: #a82325;
+    }
+  }
+}

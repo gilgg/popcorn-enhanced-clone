@@ -1,0 +1,19 @@
+.details-carousel {
+  
+}
+
+.box {
+  width: 300px;
+  overflow: hidden;
+  position: absolute;
+}
+
+.slide-img {
+  height: 450px;
+}
+
+.slide-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}

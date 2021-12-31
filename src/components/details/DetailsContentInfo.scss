@@ -1,0 +1,49 @@
+@import "../../scss/colors";
+@import "../../scss/fonts";
+
+.details-content-info {
+  display: flex;
+  align-items: center;
+  grid-gap: 1.5rem;
+  font-size: 1.6rem;
+  letter-spacing: 1px;
+  margin-bottom: 1.4rem;
+
+  &-rating {
+    display: flex;
+  }
+
+  &-country {
+    display: flex;
+    align-items: center;
+    position: relative;
+
+    img {
+      width: 24px;
+      height: 16px;
+    }
+
+    img:hover + &-name {
+      opacity: 1;
+    }
+
+    &-name {
+      position: absolute;
+      top: -3rem;
+      left: 0px;
+      font-size: 1.2rem;
+      color: #333;
+      background: rgba($color-white, 1);
+      border-radius: 3px;
+      opacity: 0;
+      transition: 0.2s;
+      padding: 0.5rem 1rem;
+    }
+
+    &:hover {
+      &-name {
+        opacity: 1;
+      }
+    }
+  }
+}

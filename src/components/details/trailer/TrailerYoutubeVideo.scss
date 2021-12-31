@@ -1,0 +1,15 @@
+.youtube-video {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 70%;
+  box-shadow: rgba(white, 0.2) 0px 30px 90px;
+
+  img {
+    width: 100%;
+  }
+
+  iframe {
+    width: 100%;
+  }
+}

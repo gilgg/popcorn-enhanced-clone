@@ -1,25 +1,43 @@
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import "./App.scss";
+import { Switch, Route, Redirect } from "react-router-dom";
+import Nav from "./components/nav/Nav";
+import DetailsPage from "./pages/DetailsPage";
+import BrowsePage from "./pages/BrowsePage";
+import BrowseGenrePage from "./pages/BrowseGenrePage";
+import BrowseSearchPage from "./pages/BrowseSearchPage";
+import DraggableComponent from "./components/utils/Draggable";
 
-function App() {
+const App = () => {
+  console.log("in app");
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="app">
+      <Nav />
+      <Switch>
+        <Route path="/" exact>
+          <Redirect to="/browse" />
+        </Route>
+        <Route path="/browse" exact>
+          <BrowsePage />
+        </Route>
+        <Route path="/browse/:type" exact>
+          <BrowsePage />
+        </Route>
+        <Route path="/browse/:type/search/" exact>
+          <Redirect to="/browse" />
+        </Route>
+        <Route path="/browse/:type/search/:query">
+          <BrowseSearchPage />
+        </Route>
+        <Route path="/browse/:type/:genreName" exact>
+          <BrowseGenrePage />
+        </Route>
+        <Route path="/details/:id">
+          <DetailsPage />
+        </Route>
+      </Switch>
     </div>
   );
-}
+};
 
 export default App;

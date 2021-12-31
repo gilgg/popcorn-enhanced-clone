@@ -1,0 +1,45 @@
+@import "../../scss/colors";
+@import "../../scss/fonts";
+
+.details-control {
+  display: flex;
+  flex-wrap: wrap;
+
+  button {
+    cursor: pointer;
+    padding: 1.5rem 4rem;
+    border: none;
+    border-radius: 5px;
+    font-size: 1.5rem;
+    font-family: $font-family;
+    display: flex;
+    align-items: center;
+    transition: 0.2s;
+  }
+
+  .play-btn {
+    margin-right: 3rem;
+    background-color: rgba(white, 0.9);
+
+    &:hover {
+      background-color: rgba(white, 0.6);
+    }
+  }
+
+  .trailer-btn {
+    background-color: rgba(red, 0.8);
+    // background-color: #cd3538;
+
+    color: white;
+
+    &:hover {
+      // background-color: rgba(red, 0.5);
+      background-color: #a82325;
+    }
+  }
+
+  &-icon {
+    margin-right: 0.7rem;
+    font-size: 1.8rem;
+  }
+}

@@ -1,0 +1,45 @@
+@import "../../scss/colors";
+@import "../../scss/fonts";
+
+.details-content {
+  flex: 0.7;
+  position: relative;
+  top: -1rem;
+
+  &-title-providers {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  &-title {
+    font-size: 5rem;
+    line-height: 6rem;
+    margin-bottom: 1.5rem;
+  }
+
+  &-desc {
+    font-size: 1.6rem;
+    margin-bottom: 6rem;
+  }
+}
+
+.details-content-info {
+  display: flex;
+  align-items: center;
+  grid-gap: 1.5rem;
+  font-size: 1.6rem;
+  letter-spacing: 1px;
+  margin-bottom: 1.4rem;
+
+  &-rating {
+    display: flex;
+  }
+
+  &-dot {
+    height: 0.8rem;
+    width: 0.8rem;
+    border-radius: 50%;
+    background-color: white;
+  }
+}

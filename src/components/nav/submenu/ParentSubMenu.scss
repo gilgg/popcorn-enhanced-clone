@@ -1,0 +1,41 @@
+@import "../../../scss/colors";
+
+.parent-sub-menu {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+
+  &:hover {
+    svg {
+      transform: rotate(-180deg);
+    }
+  }
+
+  &-top {
+    display: flex;
+    align-items: center;
+
+    &-menu-name {
+      margin-right: 1rem;
+    }
+
+    &-menu-options {
+      display: flex;
+      align-items: center;
+
+      span:first-child {
+        color: $color-nav-btn-hover;
+      }
+
+      svg {
+        transition: 0.2s;
+      }
+    }
+  }
+
+  &.active {
+    svg {
+      transform: rotate(180deg);
+    }
+  }
+}
