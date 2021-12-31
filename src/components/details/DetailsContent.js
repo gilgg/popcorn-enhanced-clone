@@ -6,7 +6,6 @@ import DetailsContentInfo from "./DetailsContentInfo";
 import Providers from "./Providers";
 
 const DetailsContent = ({ media, toggleModal }) => {
-  console.log("in mediaContent");
   return (
     <div className="details-content">
       <div className="details-content-title-providers">

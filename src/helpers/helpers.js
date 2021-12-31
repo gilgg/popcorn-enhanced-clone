@@ -251,16 +251,13 @@ const fetchFromUrl = async (url, ret) => {
 
   switch (ret) {
     case "promise":
-      // console.log("in case promise");
       return res.json();
       break;
     case "data":
-      // console.log("in case data");
       const data = await res.json();
       return data;
       break;
     default:
-      // console.log("default");
       return;
   }
 };
@@ -360,7 +357,6 @@ const getDetailsFromAPI = async (type, mediaId) => {
     poster: getImgUrl(detailsRaw.poster_path),
   };
 
-  console.log("details is:", details);
   return details;
 };
 
@@ -375,9 +371,7 @@ const getGenreMoviesFromAPI = async (type, genreName) => {
 
 const getQueryMoviesFromAPI = async (type, query) => {
   const url = `${getUrl(type, "search", null, null, query)}`;
-  console.log("url is:", url);
   const queryMoviesRaw = await fetchMultipleFromUrl(url);
-  console.log("queryMoviesRaw is:", queryMoviesRaw);
   const queryMovies = getMoviesArr(queryMoviesRaw, type);
 
   return queryMovies;
@@ -386,13 +380,11 @@ const getQueryMoviesFromAPI = async (type, query) => {
 const getProvidersFromAPI = async (type, mediaId) => {
   const url = `${getUrl(type, "providers", mediaId)}`;
   const providersRaw = await fetchFromUrl(url, "data");
-  console.log("providersRaw", providersRaw);
   const providersUSARaw = providersRaw.results.US
     ? providersRaw.results.US.flatrate
       ? providersRaw.results.US.flatrate
       : providersRaw.results.US.buy
     : [];
-  console.log("providersRaw.results.US", providersRaw.results.US);
 
   const providers = [];
 
@@ -442,7 +434,6 @@ const getMayAlsoLikeFromAPI = async (type, mediaId) => {
 const getTrailerURLFromAPI = async (type, mediaId) => {
   const url = `${getUrl(type, "trailer", mediaId)}`;
   const trailersYtKeysRaw = (await fetchFromUrl(url, "data")).results;
-  console.log("trailersYtKeysRaw", trailersYtKeysRaw);
 
   const trailersAndTeasersYtKeys = trailersYtKeysRaw.filter((tURL) => {
     if (tURL.type === "Trailer") {
@@ -451,25 +442,16 @@ const getTrailerURLFromAPI = async (type, mediaId) => {
       return tURL;
     }
   });
-  console.log("trailersAndTeasersYtKeys", trailersAndTeasersYtKeys);
 
   const trailersYtKeys = trailersAndTeasersYtKeys.filter((tURL) => {
     return tURL.type === "Trailer";
   });
-  console.log("trailersYtKeys", trailersYtKeys);
 
   const trailerYtKey =
     trailersYtKeys.length > 0
       ? trailersYtKeys[0].key
       : trailersAndTeasersYtKeys[0].key;
-  console.log("trailerYtKey", trailerYtKey);
 
-  // const trailerYtUrl = getYtUrl(trailerYtKey);
-  // console.log("trailerYtUrl", trailerYtUrl);
-
-  // getYoutubeVideo(trailerYtKey);
-
-  // return trailerYtUrl;
   return trailerYtKey;
 };
 

@@ -7,7 +7,6 @@ import { movieActions } from "../../store/movieSlice";
 import { useSelector, useDispatch } from "react-redux";
 
 const BrowseGenre = () => {
-  console.log("in browseGenrePage");
   const dispatch = useDispatch();
   dispatch(movieActions.clearStateQuery());
   const params = useParams();
@@ -19,7 +18,6 @@ const BrowseGenre = () => {
   useEffect(() => {
     const getMediaArr = async () => {
       const genreMediaArr = await getGenreMoviesFromAPI(type, genreName);
-      console.log("genreMediaArr:", genreMediaArr);
 
       const k = "id";
       const arrayUniqueByKey = [

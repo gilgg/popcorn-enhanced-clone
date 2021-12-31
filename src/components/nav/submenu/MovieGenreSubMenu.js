@@ -3,8 +3,6 @@ import "./MovieGenreSubMenu.scss";
 import { Link } from "react-router-dom";
 
 const MovieGenreSubMenu = () => {
-  console.log("in moviegenresubmenu");
-
   return (
     <ul className="genre-sub-menu">
       <li className="genre-sub-menu-item">

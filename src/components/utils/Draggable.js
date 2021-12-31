@@ -19,7 +19,6 @@ const DraggableComponent = (props) => {
   // Monitor changes to position state and update DOM
   useEffect(() => {
     if (ref.current) {
-      console.log(ref.current);
       // ref.current.style.transform = `translate(${position.x}px, ${position.y}px)`;
       ref.current.style.transform = `translate(${position.x}px)`;
     }
@@ -28,8 +27,6 @@ const DraggableComponent = (props) => {
   // Update the current position if mouse is down
   const onMouseMove = (event) => {
     if (pressed) {
-      console.log("position.x:", position.x);
-      console.log("event.movementX:", event.movementX);
       setPosition({
         x: position.x + event.movementX,
         y: position.y + event.movementY,

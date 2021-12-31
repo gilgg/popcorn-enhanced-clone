@@ -14,15 +14,6 @@ const MayAlsoLike = ({ type, mediaId }) => {
   const media = useSelector((state) => state.movie.similarMedia);
   const [mayAlsoLike, setMayAlsoLike] = useState([]);
 
-  // const onWheelHandler = (e) => {
-  //   e.preventDefault();
-  //   console.log("ref:", ref);
-  //   // ref.current.scrollLeft += e.deltaY;
-  //   ref.current.scrollBy({
-  //     left: e.deltaY < 0 ? -30 : 30,
-  //   });
-  // };
-
   const onClickLeftHandler = (e) => {
     e.preventDefault();
     ref.current.scrollBy({

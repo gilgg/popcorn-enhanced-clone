@@ -9,20 +9,15 @@ import Spinner from "../utils/Spinner";
 
 const BrowseSearch = () => {
   const dispatch = useDispatch();
-  console.log("inBrowsesEARCJ");
   const params = useParams();
-  console.log(params);
   const query = params.query;
   const type = params.type;
   const [queryMedia, setQueryMedia] = useState([]);
   const media = useSelector((state) => state.movie.movies);
-  console.log("media is:", media);
 
   useEffect(() => {
     const getMediaByQuery = async () => {
-      console.log("ingetquery");
       const mediaArr = await getQueryMoviesFromAPI(type, query); // complete
-      console.log("mediaArr: ", mediaArr);
 
       const k = "id";
       const arrayUniqueByKey = [

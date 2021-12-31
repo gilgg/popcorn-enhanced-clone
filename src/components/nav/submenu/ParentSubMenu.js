@@ -12,7 +12,6 @@ const ParentSubMenu = ({
 }) => {
   const [active, setActive] = useState(false);
   const menuRef = useRef();
-  console.log("in parentsubmenu")
 
   const onClickHandler = () => {
     setActive((prevState) => !prevState);

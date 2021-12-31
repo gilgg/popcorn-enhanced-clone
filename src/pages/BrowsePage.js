@@ -14,7 +14,6 @@ const BrowsePage = () => {
   const type = getType(params);
   const movies = useSelector((state) => state.movie.movies);
 
-  console.log("in browasepage");
 
   useEffect(() => {
     let data;
@@ -28,11 +27,6 @@ const BrowsePage = () => {
         ...new Map(moviesArr.map((item) => [item[k], item])).values(),
       ];
 
-      console.log("the unique is: " + arrayUniqueByKey.length);
-
-      console.log("in getData");
-      // console.log(new Set(moviesArr).size);
-      // dispatch(movieActions.addMovies(moviesArr));
       dispatch(movieActions.addMovies(arrayUniqueByKey));
       setToggleLoading((prevState) => !prevState);
     };

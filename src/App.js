@@ -9,7 +9,6 @@ import BrowseSearchPage from "./pages/BrowseSearchPage";
 import DraggableComponent from "./components/utils/Draggable";
 
 const App = () => {
-  console.log("in app");
   return (
     <div className="app">
       <Nav />

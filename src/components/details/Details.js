@@ -13,19 +13,14 @@ import TrailerModal from "./trailer/TrailerModal";
 const Details = () => {
   const dispatch = useDispatch();
   dispatch(movieActions.clearStateQuery());
-  console.log("in details");
   const params = useParams();
   const id = params.id;
   const [details, setDetails] = useState({});
-  console.log("details is: ", details);
   // const movies = useSelector((state) => state.movie.movies);
   const movies = useSelector((state) => state.movie.totalMedia);
-  console.log("movies is:", movies);
   const movie = movies.filter((movie) => {
     return movie.id.toString() === id;
   })[0];
-  // console.log(movie);
-  // const type = movie.type;
   const [toggleModal, setToggleModal] = useState(false);
   const toggleModalHandler = () => {
     setToggleModal((prevState) => !prevState);

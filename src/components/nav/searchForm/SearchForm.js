@@ -17,13 +17,11 @@ const SearchForm = () => {
   const [isFormBtnActive, setIsFormBtnActive] = useState(false);
 
   const dropdownOnClickHandler = (resType) => {
-    console.log("in dropdownClickHandler with resType:", resType);
     setType(resType);
   };
 
   const btnOnClickHandler = (e) => {
     e.preventDefault();
-    console.log("in btnOnclick handler");
     setIsFormBtnActive((prevState) => !prevState);
   };
 
