@@ -6,7 +6,6 @@ import DetailsPage from "./pages/DetailsPage";
 import BrowsePage from "./pages/BrowsePage";
 import BrowseGenrePage from "./pages/BrowseGenrePage";
 import BrowseSearchPage from "./pages/BrowseSearchPage";
-import DraggableComponent from "./components/utils/Draggable";
 
 const App = () => {
   return (

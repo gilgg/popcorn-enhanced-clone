@@ -1,13 +1,15 @@
 const API_KEY = "5143d77625b31a41e3b4f3b08225f48f";
 const API_KEY_PART = `?api_key=${API_KEY}`;
 const YT_API_KEY = "AIzaSyChVZlGAgi-UtVtxCOhtj6aQIPPDSk2uB8";
-const BASE_URL = "https://api.themoviedb.org/3/";
+const BASE_URL = "https://api.themoviedb.org/3";
 const BASE_IMG_URL = "https://image.tmdb.org/t/p/w500";
 const BASE_YT_URL = "https://www.youtube.com/watch?v=";
 const BASE_YT_API_URL =
   "https://youtube.googleapis.com/youtube/v3/videos?part=id&id=";
 const ANONYMOUS_PROFILE_PIC =
   "https://t3.ftcdn.net/jpg/00/57/04/58/360_F_57045887_HHJml6DJVxNBMqMeDqVJ0ZQDnotp5rGD.jpg";
+const ANONYMOUS_MOVIE_PIC =
+  "https://d32qys9a6wm9no.cloudfront.net/images/movies/poster/500x735.png";
 const DEFAULT_PAGE = 1;
 
 const genres = [
@@ -126,11 +128,13 @@ const getGenreId = (genreName) => {
   return genreId;
 };
 
-const getImgUrl = (imagePath) => {
+const getImgUrl = (actorOrMovie, imagePath) => {
   if (imagePath) {
     return `${BASE_IMG_URL}${imagePath}`;
-  } else {
+  } else if (actorOrMovie === "actor") {
     return ANONYMOUS_PROFILE_PIC;
+  } else {
+    return ANONYMOUS_MOVIE_PIC;
   }
 };
 
@@ -147,41 +151,37 @@ const getUrl = (
   ytKey = ""
 ) => {
   const pagePart = `&page=`;
-  const urlType = type === "movies" ? "movie/" : "tv/";
+  const urlType = type === "movies" ? "/movie" : "/tv";
   let url, actionPart;
 
   switch (action) {
     case "popular":
-      actionPart = `${urlType}popular${API_KEY_PART}${pagePart}`;
+      actionPart = `${urlType}/popular${API_KEY_PART}${pagePart}`;
       break;
     case "details":
-      actionPart = `${urlType}${mediaId}${API_KEY_PART}${pagePart}`;
+      actionPart = `${urlType}/${mediaId}${API_KEY_PART}${pagePart}`;
       break;
     case "actors":
-      actionPart = `${urlType}${mediaId}/credits${API_KEY_PART}${pagePart}`;
+      actionPart = `${urlType}/${mediaId}/credits${API_KEY_PART}${pagePart}`;
       break;
     case "search":
-      actionPart = `search/${urlType.replace(
-        "/",
-        ""
-      )}${API_KEY_PART}&query=${query}${pagePart}`;
+      actionPart = `/search${urlType}${API_KEY_PART}&query=${query}${pagePart}`;
       break;
     case "providers":
-      actionPart = `${urlType}${mediaId}/watch/providers${API_KEY_PART}`;
+      actionPart = `${urlType}/${mediaId}/watch/providers${API_KEY_PART}`;
       break;
     case "trailer":
-      actionPart = `${urlType}${mediaId}/videos${API_KEY_PART}${pagePart}${DEFAULT_PAGE}`;
+      actionPart = `${urlType}/${mediaId}/videos${API_KEY_PART}${pagePart}${DEFAULT_PAGE}`;
       break;
     case "genres":
-      actionPart = `discover/${urlType}${API_KEY_PART}&with_genres=${genreId}${pagePart}`;
+      actionPart = `/discover${urlType}${API_KEY_PART}&with_genres=${genreId}${pagePart}`;
       break;
     case "may-also-like":
-      actionPart = `${urlType}${mediaId}/similar${API_KEY_PART}${pagePart}`;
+      actionPart = `${urlType}/${mediaId}/similar${API_KEY_PART}${pagePart}`;
       break;
     case "youtube-video":
       actionPart = `${BASE_YT_API_URL}${ytKey}${YT_API_KEY}`;
       break;
-
     default:
       break;
   }
@@ -298,8 +298,8 @@ const getMoviesArr = (dataArr, type) => {
       const year = getYear(type, media);
       const desc = media.overview;
       const rating = media.vote_average;
-      const poster = getImgUrl(media.poster_path);
-      const cover = getImgUrl(media.backdrop_path);
+      const poster = getImgUrl("movie", media.poster_path);
+      const cover = getImgUrl("movie", media.backdrop_path);
       const myType = type;
 
       const mediaObj = {
@@ -329,7 +329,7 @@ const getActorsFromAPI = async (type, mediaId) => {
     const actorObj = {
       id: actor.id,
       name: actor.name,
-      image: getImgUrl(actor.profile_path),
+      image: getImgUrl("actor", actor.profile_path),
     };
     actors.push(actorObj);
   });
@@ -353,8 +353,8 @@ const getDetailsFromAPI = async (type, mediaId) => {
     rating: detailsRaw.vote_average,
     year: getYear(mediaType, detailsRaw),
     country: getCountry(detailsRaw),
-    cover: getImgUrl(detailsRaw.backdrop_path),
-    poster: getImgUrl(detailsRaw.poster_path),
+    cover: getImgUrl("movie", detailsRaw.backdrop_path),
+    poster: getImgUrl("movie", detailsRaw.poster_path),
   };
 
   return details;
@@ -392,7 +392,7 @@ const getProvidersFromAPI = async (type, mediaId) => {
     const providerObj = {
       id: provider.provider_id,
       name: provider.provider_name,
-      image: getImgUrl(provider.logo_path),
+      image: getImgUrl("movie", provider.logo_path),
     };
     providers.push(providerObj);
   });
@@ -411,8 +411,8 @@ const getMayAlsoLikeFromAPI = async (type, mediaId) => {
     const desc = media.overview;
     const year = getYear(type, media);
     const rating = media.vote_average;
-    const poster = getImgUrl(media.poster_path);
-    const cover = getImgUrl(media.backdrop_path);
+    const poster = getImgUrl("movie", media.poster_path);
+    const cover = getImgUrl("movie", media.backdrop_path);
     const myType = type;
 
     const mediaObj = {
