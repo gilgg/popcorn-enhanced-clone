@@ -1,11 +1,10 @@
 import React, { useEffect, useState } from "react";
 import "./BrowseSearch.scss";
 import { useParams } from "react-router-dom";
-import { getQueryMoviesFromAPI, isEmpty } from "../../helpers/helpers";
+import { getQueryMediaFromAPI, isEmpty } from "../../helpers/helpers";
 import { movieActions } from "../../store/movieSlice";
 import { useSelector, useDispatch } from "react-redux";
 import MovieCard from "../card/MovieCard";
-import Spinner from "../utils/Spinner";
 
 const BrowseSearch = () => {
   const dispatch = useDispatch();
@@ -17,15 +16,9 @@ const BrowseSearch = () => {
 
   useEffect(() => {
     const getMediaByQuery = async () => {
-      const mediaArr = await getQueryMoviesFromAPI(type, query); // complete
-
-      const k = "id";
-      const arrayUniqueByKey = [
-        ...new Map(mediaArr.map((item) => [item[k], item])).values(),
-      ];
-
-      dispatch(movieActions.addMovies(arrayUniqueByKey));
-      setQueryMedia(arrayUniqueByKey);
+      const mediaArr = await getQueryMediaFromAPI(type, query);
+      dispatch(movieActions.addMovies(mediaArr));
+      setQueryMedia(mediaArr);
     };
 
     getMediaByQuery();
@@ -33,7 +26,6 @@ const BrowseSearch = () => {
 
   return (
     <div className="browse-search">
-      {/* <Spinner /> */}
       {isEmpty(media) && (
         <h1 className="browse-search-no-results">
           No results found! Please search for something else...

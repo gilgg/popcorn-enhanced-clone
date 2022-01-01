@@ -1,0 +1,30 @@
+@import "../../../scss/colors";
+
+.header-nav-settings-icon {
+  margin-left: 1.3rem;
+  font-size: 1.9rem;
+  color: #aaa;
+  cursor: pointer;
+  transition: 0.2s;
+
+  &:first-child {
+    color: $color-red;
+
+    &:hover {
+      color: $color-red-hover;
+    }
+  }
+
+  &:hover {
+    color: $color-blue;
+  }
+}
+
+.icon-folder {
+  font-size: 2.3rem;
+}
+
+.icon-drawer {
+  padding-bottom: 0.6rem;
+  font-size: 2.2rem;
+}

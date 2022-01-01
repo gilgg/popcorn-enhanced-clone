@@ -1,5 +1,7 @@
+@import "../../../scss/colors";
+
 .trailer-modal {
-  background-color: rgba(0,0,0,0.95);
+  background-color: rgba(0, 0, 0, 0.95);
   height: 100%;
   width: 100%;
   position: absolute;
@@ -18,7 +20,9 @@
     top: 100px;
     right: 10rem;
     font-size: 5rem;
-    color: white;
+    color: $color-white;
     cursor: pointer;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px,
+      rgba($color-white, 0.3) 0px 30px 60px -30px;
   }
 }

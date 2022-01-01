@@ -12,9 +12,6 @@ const App = () => {
     <div className="app">
       <Nav />
       <Switch>
-        <Route path="/" exact>
-          <Redirect to="/browse" />
-        </Route>
         <Route path="/browse" exact>
           <BrowsePage />
         </Route>
@@ -32,6 +29,9 @@ const App = () => {
         </Route>
         <Route path="/details/:id">
           <DetailsPage />
+        </Route>
+        <Route path="/">
+          <Redirect to="/browse" />
         </Route>
       </Switch>
     </div>

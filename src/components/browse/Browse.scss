@@ -1,13 +1,9 @@
-@import "../../scss/colors";
-
-.home {
+.browse {
   padding: 1.1rem;
 }
 
-.home-container {
+.browse-container {
   display: grid;
   grid-template-columns: repeat(auto-fill, 133px);
   grid-gap: 1rem;
 }
-
-

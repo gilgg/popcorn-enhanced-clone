@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import "./BrowseGenre.scss";
 import { useParams } from "react-router-dom";
-import { getGenreMoviesFromAPI, isEmpty } from "../../helpers/helpers";
+import { getGenreMediaFromAPI, isEmpty } from "../../helpers/helpers";
 import MovieCard from "../card/MovieCard";
 import { movieActions } from "../../store/movieSlice";
 import { useSelector, useDispatch } from "react-redux";
@@ -17,14 +17,9 @@ const BrowseGenre = () => {
 
   useEffect(() => {
     const getMediaArr = async () => {
-      const genreMediaArr = await getGenreMoviesFromAPI(type, genreName);
-
-      const k = "id";
-      const arrayUniqueByKey = [
-        ...new Map(genreMediaArr.map((item) => [item[k], item])).values(),
-      ];
-      dispatch(movieActions.addMovies(arrayUniqueByKey));
-      setGenreMedia(arrayUniqueByKey);
+      const genreMediaArr = await getGenreMediaFromAPI(type, genreName);
+      dispatch(movieActions.addMovies(genreMediaArr));
+      setGenreMedia(genreMediaArr);
     };
     getMediaArr();
   }, [params]);

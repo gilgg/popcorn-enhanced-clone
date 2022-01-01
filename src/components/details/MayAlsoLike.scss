@@ -11,19 +11,19 @@
   }
 
   button {
-    position: absolute;
     display: flex;
     align-items: center;
     justify-content: center;
+    position: absolute;
     top: 127px;
     padding: 1rem;
-    background-color: white;
+    background-color: $color-white;
     border: none;
     border-radius: 10px;
     transition: 0.2s;
 
     &:hover {
-      background-color: rgba(white, 0.7);
+      background-color: rgba($color-white, 0.7);
     }
   }
 
@@ -43,10 +43,10 @@
 .may-also-like {
   overflow-x: scroll;
   margin-top: 1rem;
+  scrollbar-width: none;
 
   &-suggestions {
     display: flex;
-    cursor: grab;
 
     .movie-card {
       margin-right: 1.5rem;
@@ -55,9 +55,7 @@
   }
 
   &::-webkit-scrollbar {
-    // height: 8px;
-    height: 0;
-
+    display: none;
   }
 
   &::-webkit-scrollbar-track {
@@ -65,18 +63,17 @@
   }
 
   &::-webkit-scrollbar-thumb {
-    background-color: $color-nav-btn-hover;
-    background-color: #cd3538;
-
-    border-radius: 10px;
     height: 30px;
     width: 30px;
     margin-top: 100px;
     margin-bottom: 100px;
+    background-color: $color-blue;
+    background-color: $color-red;
+    border-radius: 10px;
 
     &:active {
-      background-color: #265aa3;
-      background-color: #a82325;
+      background-color: $color-blue-hover;
+      background-color: $color-red-hover;
     }
   }
 }

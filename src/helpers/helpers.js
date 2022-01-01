@@ -246,6 +246,14 @@ const getGenres = (genresRaw) => {
   return genresRaw.map((genre) => genre.name).slice(0, 4);
 };
 
+const removeDuplicates = (arrOfObjects) => {
+  const key = "id";
+  const arrayUniqueByKey = [
+    ...new Map(arrOfObjects.map((item) => [item[key], item])).values(),
+  ];
+  return arrayUniqueByKey;
+};
+
 const fetchFromUrl = async (url, ret) => {
   const res = await fetch(url);
 
@@ -262,23 +270,6 @@ const fetchFromUrl = async (url, ret) => {
   }
 };
 
-const fetchData = async (type) => {
-  const dataArr = await fetchType1(type);
-  return dataArr;
-};
-
-const fetchType1 = async (type) => {
-  const fetchUrl = getUrl(type, "popular");
-
-  return Promise.all([
-    fetchFromUrl(`${fetchUrl}${DEFAULT_PAGE}`, "promise"),
-    fetchFromUrl(`${fetchUrl}2`, "promise"),
-    fetchFromUrl(`${fetchUrl}3`, "promise"),
-    fetchFromUrl(`${fetchUrl}4`, "promise"),
-    fetchFromUrl(`${fetchUrl}5`, "promise"),
-  ]);
-};
-
 const fetchMultipleFromUrl = async (url) => {
   return Promise.all([
     fetchFromUrl(`${url}${DEFAULT_PAGE}`, "promise"),
@@ -289,7 +280,7 @@ const fetchMultipleFromUrl = async (url) => {
   ]);
 };
 
-const getMoviesArr = (dataArr, type) => {
+const getMediaArr = (dataArr, type) => {
   const arr = [];
   dataArr.map((data) => {
     data.results.map((media) => {
@@ -316,7 +307,32 @@ const getMoviesArr = (dataArr, type) => {
     });
   });
 
-  return arr;
+  return removeDuplicates(arr);
+};
+
+const getPopularMediaFromAPI = async (type) => {
+  const url = `${getUrl(type, "popular")}`;
+  const popularMoviesRaw = await fetchMultipleFromUrl(url);
+  const popularMovies = getMediaArr(popularMoviesRaw, type);
+
+  return removeDuplicates(popularMovies);
+};
+
+const getGenreMediaFromAPI = async (type, genreName) => {
+  const genreId = getGenreId(genreName);
+  const url = `${getUrl(type, "genres", null, genreId)}`;
+  const genreMoviesRaw = await fetchMultipleFromUrl(url);
+  const genreMovies = getMediaArr(genreMoviesRaw, type);
+
+  return removeDuplicates(genreMovies);
+};
+
+const getQueryMediaFromAPI = async (type, query) => {
+  const url = `${getUrl(type, "search", null, null, query)}`;
+  const queryMoviesRaw = await fetchMultipleFromUrl(url);
+  const queryMovies = getMediaArr(queryMoviesRaw, type);
+
+  return removeDuplicates(queryMovies);
 };
 
 const getActorsFromAPI = async (type, mediaId) => {
@@ -358,23 +374,6 @@ const getDetailsFromAPI = async (type, mediaId) => {
   };
 
   return details;
-};
-
-const getGenreMoviesFromAPI = async (type, genreName) => {
-  const genreId = getGenreId(genreName);
-  const url = `${getUrl(type, "genres", null, genreId)}`;
-  const genreMoviesRaw = await fetchMultipleFromUrl(url);
-  const genreMovies = getMoviesArr(genreMoviesRaw, type);
-
-  return genreMovies;
-};
-
-const getQueryMoviesFromAPI = async (type, query) => {
-  const url = `${getUrl(type, "search", null, null, query)}`;
-  const queryMoviesRaw = await fetchMultipleFromUrl(url);
-  const queryMovies = getMoviesArr(queryMoviesRaw, type);
-
-  return queryMovies;
 };
 
 const getProvidersFromAPI = async (type, mediaId) => {
@@ -466,13 +465,14 @@ const getTrailerURLFromAPI = async (type, mediaId) => {
 
 export {
   isEmpty,
-  fetchData,
   getType,
-  getMoviesArr,
+  removeDuplicates,
+  getMediaArr,
+  getPopularMediaFromAPI,
+  getGenreMediaFromAPI,
+  getQueryMediaFromAPI,
   getActorsFromAPI,
   getDetailsFromAPI,
-  getGenreMoviesFromAPI,
-  getQueryMoviesFromAPI,
   getProvidersFromAPI,
   getMayAlsoLikeFromAPI,
   getTrailerURLFromAPI,

@@ -2,30 +2,29 @@
 @import "../../../scss/fonts";
 
 .search-form {
+  box-sizing: content-box;
   display: flex;
   justify-content: center;
+  position: relative;
+  top: -2px;
   height: 24px;
   border: 3px solid transparent;
   border-radius: 25px;
-  box-sizing: content-box;
-  position: relative;
-  top: -2px;
 
   &.focusActive {
-    border: 3px solid $color-nav-btn-hover;
+    border: 3px solid $color-blue;
   }
 
   input {
+    flex: 0.8;
+    height: 100%;
     padding-right: 3rem;
     padding-left: 1.4rem;
-    height: 100%;
-    // border-radius: 25px;
+    outline: none;
+    background-color: rgba($color-white, 0.8);
+    border: none;
     border-top-left-radius: 25px;
     border-bottom-left-radius: 25px;
-    border: none;
-    outline: none;
-    background-color: rgba(white, 0.8);
-    flex: 0.8;
 
     &::placeholder {
       font-family: $font-family;
@@ -48,14 +47,14 @@
     align-items: center;
     justify-content: space-between;
     position: relative;
-    background-color: rgba(white, 0.7);
+    width: 89px;
+    padding: 0 0.7rem;
+    font-family: $font-family;
+    font-weight: 500;
+    background-color: rgba($color-white, 0.7);
     border: none;
     border-left: 1px solid gray;
     border-top-right-radius: 25px;
     border-bottom-right-radius: 25px;
-    padding: 0 0.7rem;
-    font-family: $font-family;
-    font-weight: 500;
-    width: 89px;
   }
 }

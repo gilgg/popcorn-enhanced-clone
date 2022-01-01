@@ -1,55 +1,10 @@
-import React, { useState, useEffect } from "react";
-import "../components/home/Home.scss";
-import { useParams } from "react-router-dom";
-import { useSelector, useDispatch } from "react-redux";
-import { fetchData, getType, getMoviesArr, isEmpty } from "../helpers/helpers";
-import { movieActions } from "../store/movieSlice";
-import MovieCard from "../components/card/MovieCard";
+import React from "react";
+import Browse from "../components/browse/Browse";
 
 const BrowsePage = () => {
-  const dispatch = useDispatch();
-  dispatch(movieActions.clearStateQuery());
-  const params = useParams();
-  const [toggleLoading, setToggleLoading] = useState(false);
-  const type = getType(params);
-  const movies = useSelector((state) => state.movie.movies);
-
-
-  useEffect(() => {
-    let data;
-
-    const getData = async () => {
-      data = await fetchData(type);
-      const moviesArr = getMoviesArr(data, type);
-
-      const k = "id";
-      const arrayUniqueByKey = [
-        ...new Map(moviesArr.map((item) => [item[k], item])).values(),
-      ];
-
-      dispatch(movieActions.addMovies(arrayUniqueByKey));
-      setToggleLoading((prevState) => !prevState);
-    };
-
-    getData();
-  }, [params]);
-
   return (
-    <div className="home">
-      <div className="home-container">
-        {!isEmpty(movies) &&
-          movies.map((movie) => {
-            return (
-              <MovieCard
-                key={movie.id}
-                id={movie.id}
-                image={movie.poster}
-                title={movie.title}
-                year={movie.year}
-              />
-            );
-          })}
-      </div>
+    <div className="browse-page">
+      <Browse />
     </div>
   );
 };
