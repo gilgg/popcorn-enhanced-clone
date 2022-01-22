@@ -1,0 +1,51 @@
+@import "../../scss/colors";
+@import "../../scss/fonts";
+
+.details-content-info-mobile {
+  display: none;
+  flex-direction: column;
+  font-size: 1.2rem;
+  letter-spacing: 1px;
+  margin-bottom: 1.4rem;
+
+  @media (max-width: 900px) {
+    display: flex;
+  }
+
+  &-first-part {
+    display: flex;
+    align-items: center;
+    font-size: 1.4rem;
+    margin-bottom: 0.5rem;
+
+    div,
+    p {
+      margin-right: 1rem;
+    }
+  }
+
+  &-genres {
+    margin-bottom: 0.5rem;
+    font-size: 1.4rem;
+  }
+
+  &-rating {
+    display: flex;
+    align-items: center;
+    font-size: 1.4rem;
+    
+    p {
+      margin-right: 0.5rem;
+    }
+  }
+
+  &-country {
+    display: flex;
+    align-items: center;
+    
+    img {
+      height: 22px;
+      width: 24px;
+    }
+  }
+}

@@ -3,6 +3,14 @@
   overflow: hidden;
   transition: 0.2s;
 
+  @media (max-width: 900px) {
+    width: auto;
+  }
+
+  @media (max-width: 480px) {
+    margin-bottom: 2rem;
+  }
+
   &-img {
     height: 199px;
     width: 133px;
@@ -19,6 +27,12 @@
       &:hover {
         transform: scale(1.1);
       }
+    }
+
+    @media (max-width: 900px) {
+      // max-height: 250px;
+      min-width: 133px;
+      height: auto;
     }
   }
 

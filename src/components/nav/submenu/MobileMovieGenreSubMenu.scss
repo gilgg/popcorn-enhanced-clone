@@ -1,0 +1,36 @@
+@import "../../../scss/colors";
+
+.mobile-genre-sub-menu {
+  display: none;
+  list-style: none;
+  background-color: #152564;
+  height: 300px;
+  overflow-y: scroll;
+
+  &.activeItem {
+    display: block;
+  }
+
+  &-item {
+    padding: 1rem 0rem;
+    padding-left: 1rem;
+    font-size: 1.2rem;
+    text-align: center;
+    border-bottom: 1px solid $color-white;
+
+    &:hover {
+      background-color: rgba($color-white, 0.7);
+
+      a {
+        display: block;
+        color: black;
+      }
+    }
+  }
+}
+
+.mobile-parent-sub-menu.active .mobile-genre-sub-menu {
+  display: block;
+  opacity: 1;
+  width: 100%;
+}

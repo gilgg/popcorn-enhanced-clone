@@ -12,5 +12,10 @@
     &:last-child {
       margin-right: 0;
     }
+
+    @media (max-width: 900px) {
+      height: 27px;
+      width: 27px;
+    }
   }
 }

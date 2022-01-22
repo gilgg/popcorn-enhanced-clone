@@ -26,6 +26,10 @@
     border-top-left-radius: 25px;
     border-bottom-left-radius: 25px;
 
+    // iOS
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+
     &::placeholder {
       font-family: $font-family;
     }
@@ -56,5 +60,10 @@
     border-left: 1px solid gray;
     border-top-right-radius: 25px;
     border-bottom-right-radius: 25px;
+  }
+
+  @media (max-width: 810px) {
+    height: 28px;
+    // margin-bottom: 1rem;
   }
 }

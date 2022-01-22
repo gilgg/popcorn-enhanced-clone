@@ -22,6 +22,7 @@ const Details = () => {
     return movie.id.toString() === id;
   })[0];
   const [toggleModal, setToggleModal] = useState(false);
+  
   const toggleModalHandler = () => {
     setToggleModal((prevState) => !prevState);
     window.scrollTo(0, 140);

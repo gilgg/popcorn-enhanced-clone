@@ -25,4 +25,9 @@
       width: 1.6rem;
     }
   }
+
+  @media (max-width: 900px) {
+    position: sticky;
+    top: 0;
+  }
 }

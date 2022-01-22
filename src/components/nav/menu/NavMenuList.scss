@@ -1,0 +1,35 @@
+@import "../../../scss/colors";
+
+.header-nav-menu-list {
+  display: flex;
+  list-style: none;
+
+  @media (max-width: 810px) {
+    display: none;
+  }
+
+  &-item {
+    margin-right: 3rem;
+    padding: 0.5rem 0.5rem;
+    font-size: 1.2rem;
+    font-weight: 500;
+    letter-spacing: 1.1px;
+    border-bottom: 5px solid transparent;
+    border-bottom-right-radius: 2px;
+    border-bottom-left-radius: 2px;
+    cursor: pointer;
+    transition: 0.2s ease;
+
+    &:hover,
+    &.activeItem {
+      border-bottom: 3px solid $color-blue;
+    }
+  }
+
+  &-item-action,
+  &-item-comedy {
+    @media (max-width: 1092px) {
+      display: none;
+    }
+  }
+}

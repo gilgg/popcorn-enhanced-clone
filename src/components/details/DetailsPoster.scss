@@ -6,5 +6,25 @@
     margin-right: 3rem;
     box-shadow: rgba(rgb(196, 45, 45), 0.1) 0px 30px 100px,
       rgba(rgb(255, 255, 255), 0.22) 0px 15px 100px;
+
+    @media (max-width: 1300px) {
+      max-height: 539px;
+      max-width: 360px;
+    }
+
+    @media (max-width: 900px) {
+      max-height: 482px;
+      max-width: 322px;
+    }
+
+    @media (max-width: 750px) {
+      margin-right: 0;
+      margin-bottom: 2rem;
+    }
+
+    @media (max-width: 480px) {
+      max-height: 424px;
+      max-width: 383px;
+    }
   }
 }

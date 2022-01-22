@@ -6,13 +6,17 @@
   width: 100%;
   position: absolute;
   top: 0;
-  z-index: 5;
+  z-index: 12;
   display: none;
 
   &.modalActive {
     display: flex;
     align-items: center;
     justify-content: center;
+
+    @media (max-width: 480px) {
+      align-items: flex-start;
+    }
   }
 
   &-close-icon {
@@ -24,5 +28,10 @@
     cursor: pointer;
     box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px,
       rgba($color-white, 0.3) 0px 30px 60px -30px;
+
+    @media (max-width: 900px) {
+      top: 12rem;
+      right: 1rem;
+    }
   }
 }

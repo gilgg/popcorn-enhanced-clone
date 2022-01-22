@@ -338,7 +338,7 @@ const getQueryMediaFromAPI = async (type, query) => {
 const getActorsFromAPI = async (type, mediaId) => {
   const url = `${getUrl(type, "actors", mediaId)}${DEFAULT_PAGE}`;
   const actorsArrRaw = await fetchFromUrl(url, "data");
-  const actorsArrRawSliced = actorsArrRaw.cast.slice(0, 10);
+  const actorsArrRawSliced = actorsArrRaw.cast.slice(0, 6);
   const actors = [];
 
   actorsArrRawSliced.map((actor) => {

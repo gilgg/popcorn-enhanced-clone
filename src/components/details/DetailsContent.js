@@ -3,6 +3,7 @@ import "./DetailsContent.scss";
 import Avatars from "./Avatars";
 import DetailsControl from "./DetailsControl";
 import DetailsContentInfo from "./DetailsContentInfo";
+import DetailsContentInfoMobile from "./DetailsContentInfoMobile";
 import Providers from "./Providers";
 
 const DetailsContent = ({ media, toggleModal }) => {
@@ -13,6 +14,7 @@ const DetailsContent = ({ media, toggleModal }) => {
         <Providers type={media.type} mediaId={media.id} />
       </div>
       <DetailsContentInfo media={media} />
+      <DetailsContentInfoMobile media={media} />
       <div className="details-content-desc">{media.desc}</div>
       <DetailsControl toggleModal={toggleModal} />
       <Avatars type={media.type} mediaId={media.id} />

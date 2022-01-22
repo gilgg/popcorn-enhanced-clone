@@ -25,13 +25,15 @@ const BrowseSearch = () => {
   }, [query]);
 
   return (
-    <div className="browse-search">
+    // <div className="browse-search">
+    <div className="browse">
       {isEmpty(media) && (
         <h1 className="browse-search-no-results">
           No results found! Please search for something else...
         </h1>
       )}
-      <div className="browse-genre-container">
+      {/* <div className="browse-genre-container"> */}
+      <div className="browse-container">
         {!isEmpty(media) &&
           !isEmpty(queryMedia) &&
           media.map((media) => (

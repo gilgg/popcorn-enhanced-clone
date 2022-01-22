@@ -1,0 +1,77 @@
+@import "../../../scss/colors";
+
+.mobile-nav-menu {
+  display: none;
+  margin-right: 2rem;
+
+  @media (max-width: 810px) {
+    display: block;
+  }
+
+  @media (max-width: 480px) {
+    margin-right: 1rem;
+  }
+
+  &-icon {
+    color: $color-white;
+    font-size: 2.8rem;
+    cursor: pointer;
+  }
+
+  &-list {
+    position: fixed;
+    background-color: rgba($color-theme-bg-color, 0.98);
+    -webkit-overflow-scrolling:touch; // mobile safari
+    height: 1200px;
+    width: 100%;
+    top: 85px;
+    left: -100%;
+    transition: 0.3s;
+    overflow-y: scroll;
+
+    @media (max-width: 350px) {
+      top: 109.5px;
+    }
+
+    &.mobileMenuActive {
+      left: 0;
+    }
+  }
+}
+
+.mobile-nav-menu-list-item {
+  border-bottom: 1px solid gray;
+  font-size: 2rem;
+  display: flex;
+  justify-content: center;
+
+  > a {
+    padding: 4rem 0;
+  }
+
+  .movie-genre {
+    &-header {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 1rem 0;
+    }
+
+    &-title {
+      margin-right: 1rem;
+    }
+
+    &-option {
+      display: flex;
+      align-items: center;
+
+      span {
+        color: $color-blue;
+      }
+    }
+  }
+
+  &.other {
+    text-align: center;
+  }
+}

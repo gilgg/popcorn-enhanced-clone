@@ -25,8 +25,10 @@ const BrowseGenre = () => {
   }, [params]);
 
   return (
-    <div className="browse-genre">
-      <div className="browse-genre-container">
+    // <div className="browse-genre">
+    <div className="browse">
+      {/* <div className="browse-genre-container"> */}
+      <div className="browse-container">
         {!isEmpty(media) &&
           !isEmpty(genreMedia) &&
           genreMedia.map((media) => (
