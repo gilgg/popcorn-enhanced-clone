@@ -4,8 +4,6 @@ import { Switch, Route, Redirect } from "react-router-dom";
 import Nav from "./components/nav/Nav";
 import DetailsPage from "./pages/DetailsPage";
 import BrowsePage from "./pages/BrowsePage";
-import BrowseGenrePage from "./pages/BrowseGenrePage";
-import BrowseSearchPage from "./pages/BrowseSearchPage";
 
 const App = () => {
   return (
@@ -13,19 +11,19 @@ const App = () => {
       <Nav />
       <Switch>
         <Route path="/browse" exact>
-          <BrowsePage />
+          <BrowsePage browseType="regular" />
         </Route>
         <Route path="/browse/:type" exact>
-          <BrowsePage />
+          <BrowsePage browseType="regular" />
         </Route>
         <Route path="/browse/:type/search/" exact>
           <Redirect to="/browse" />
         </Route>
         <Route path="/browse/:type/search/:query">
-          <BrowseSearchPage />
+          <BrowsePage browseType="search" />
         </Route>
         <Route path="/browse/:type/:genreName" exact>
-          <BrowseGenrePage />
+          <BrowsePage browseType="genre" /> 
         </Route>
         <Route path="/details/:id">
           <DetailsPage />

@@ -1,10 +1,10 @@
 import React from "react";
 import Browse from "../components/browse/Browse";
 
-const BrowsePage = () => {
+const BrowsePage = ({ browseType }) => {
   return (
-    <div className="browse-page">
-      <Browse />
+    <div className="browse-search-page">
+      <Browse browseType={browseType} />
     </div>
   );
 };
