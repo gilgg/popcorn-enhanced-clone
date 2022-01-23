@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import "./App.scss";
 import { Switch, Route, Redirect } from "react-router-dom";
 import Nav from "./components/nav/Nav";
@@ -7,12 +7,7 @@ import BrowsePage from "./pages/BrowsePage";
 import useInit from "./hooks/useInit";
 
 const App = () => {
-  // const [isStateFilled, setIsStateFilled] = useState(false);
-  // console.log("isStateFilled", isStateFilled);
-
-  // useInit(setIsStateFilled);
   useInit();
-  // console.log("in app")
   
   return (
     <div className="app">

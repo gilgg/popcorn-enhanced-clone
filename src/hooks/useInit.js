@@ -5,7 +5,6 @@ import { movieActions } from "../store/movieSlice";
 
 const useInit = () => {
   const dispatch = useDispatch();
-  console.log("in useInit")
 
   useEffect(() => {
     const getFromDB = async () => {
