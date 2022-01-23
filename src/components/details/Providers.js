@@ -1,7 +1,7 @@
 import React from "react";
 import "./Providers.scss";
-import { isEmpty, getUrl } from "../../helpers/helpers";
 import useGetFromApi from "../../hooks/useGetFromApi";
+import { isEmpty, getUrl } from "../../helpers/helpers";
 
 const Providers = ({ type, mediaId }) => {
   const providers = useGetFromApi([], getUrl(type, "providers", mediaId));

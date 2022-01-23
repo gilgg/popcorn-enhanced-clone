@@ -1,9 +1,9 @@
-import React, { useEffect, useRef, useState } from "react";
+import React, { useRef, useState } from "react";
 import "./SearchForm.scss";
-import { IoMdArrowDropdown } from "react-icons/io";
+import { useSelector, useDispatch } from "react-redux";
 import { useHistory } from "react-router-dom";
 import { movieActions } from "../../../store/movieSlice";
-import { useSelector, useDispatch } from "react-redux";
+import { IoMdArrowDropdown } from "react-icons/io";
 import SearchDropdownMenu from "./SearchDropdownMenu";
 
 const SearchForm = () => {

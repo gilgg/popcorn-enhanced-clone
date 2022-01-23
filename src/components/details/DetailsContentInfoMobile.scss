@@ -4,9 +4,9 @@
 .details-content-info-mobile {
   display: none;
   flex-direction: column;
+  margin-bottom: 1.4rem;
   font-size: 1.2rem;
   letter-spacing: 1px;
-  margin-bottom: 1.4rem;
 
   @media (max-width: 900px) {
     display: flex;
@@ -15,8 +15,8 @@
   &-first-part {
     display: flex;
     align-items: center;
-    font-size: 1.4rem;
     margin-bottom: 0.5rem;
+    font-size: 1.4rem;
 
     div,
     p {

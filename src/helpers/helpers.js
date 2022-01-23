@@ -7,10 +7,6 @@ const getUrl = (
 ) => {
   let url, actionPart;
 
-  // if(!type) {
-  //   return "";
-  // }
-
   switch (action) {
     case "popular":
       actionPart = `/${action}/${type}`;

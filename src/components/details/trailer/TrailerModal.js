@@ -1,8 +1,7 @@
 import React from "react";
 import "./TrailerModal.scss";
-import TrailerYoutubeVideo from "./TrailerYoutubeVideo";
-import { GrClose } from "react-icons/gr";
 import { IoMdClose } from "react-icons/io";
+import TrailerYoutubeVideo from "./TrailerYoutubeVideo";
 
 const TrailerModal = ({ type, mediaId, toggleModal, setToggleModal }) => {
   return (
@@ -13,7 +12,6 @@ const TrailerModal = ({ type, mediaId, toggleModal, setToggleModal }) => {
         toggleModal={toggleModal}
         setToggleModal={setToggleModal}
       />
-      <GrClose className="trailer-modal-close-icon" />
       <IoMdClose className="trailer-modal-close-icon" />
     </div>
   );

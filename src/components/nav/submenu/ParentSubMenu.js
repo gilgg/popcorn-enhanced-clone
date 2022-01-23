@@ -1,9 +1,9 @@
 import React, { useState, useRef } from "react";
 import "./ParentSubMenu.scss";
+import useCloseModal from "../../../hooks/useCloseModal";
+import { IoMdArrowDropdown } from "react-icons/io";
 import MovieGenreSubMenu from "./MovieGenreSubMenu";
 import SeriesGenreSubMenu from "./SeriesGenreSubMenu";
-import { IoMdArrowDropdown } from "react-icons/io";
-import useCloseModal from "../../../hooks/useCloseModal";
 
 const ParentSubMenu = ({
   onClickSetActiveItem,

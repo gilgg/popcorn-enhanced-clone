@@ -1,5 +1,4 @@
 import React from "react";
-import "./App.scss";
 import { Switch, Route, Redirect } from "react-router-dom";
 import Nav from "./components/nav/Nav";
 import DetailsPage from "./pages/DetailsPage";

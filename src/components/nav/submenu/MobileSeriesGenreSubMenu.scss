@@ -2,9 +2,9 @@
 
 .mobile-genre-sub-menu {
   display: none;
+  height: 300px;
   list-style: none;
   background-color: #152564;
-  height: 300px;
   overflow-y: scroll;
 
   &.activeItem {

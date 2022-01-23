@@ -1,6 +1,5 @@
 .browse {
   padding: 1.1rem;
-  // height: 100vh;
 
   @media (max-width: 900px) {
     padding-top: 2rem;
@@ -20,22 +19,17 @@
   @media (max-width: 900px) {
     display: flex;
     flex-wrap: wrap;
-    // justify-content: center;
     justify-content: space-between;
-    // grid-column-gap: 2.5rem;
-    // grid-row-gap: 2rem;
     gap: 2.5rem;
     column-gap: 2.5rem;
     row-gap: 2rem;
   }
 
   @media (max-width: 480px) {
-    // grid-column-gap: 4rem;
     column-gap: 4rem;
   }
 
   @media (max-width: 350px) {
-    // grid-column-gap: 2.5rem;
     column-gap: 2.5rem;
   }
 }

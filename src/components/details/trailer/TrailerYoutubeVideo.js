@@ -1,8 +1,8 @@
 import React, { useRef } from "react";
 import "./TrailerYoutubeVideo.scss";
-import { getUrl } from "../../../helpers/helpers";
 import useGetFromApi from "../../../hooks/useGetFromApi";
 import useCloseModal from "../../../hooks/useCloseModal";
+import { getUrl } from "../../../helpers/helpers";
 
 const TrailerYoutubeVideo = ({
   type,

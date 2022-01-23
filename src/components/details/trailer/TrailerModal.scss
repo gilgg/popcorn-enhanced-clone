@@ -1,13 +1,18 @@
 @import "../../../scss/colors";
 
 .trailer-modal {
-  background-color: rgba(0, 0, 0, 0.95);
-  height: 100%;
-  width: 100%;
+  display: none;
+  z-index: 12;
   position: absolute;
   top: 0;
-  z-index: 12;
-  display: none;
+  height: 100%;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.95);
+
+  @media (max-width: 480px) {
+    top: 13rem;
+    background-color: #000;
+  }
 
   &.modalActive {
     display: flex;
@@ -25,13 +30,17 @@
     right: 10rem;
     font-size: 5rem;
     color: $color-white;
-    cursor: pointer;
     box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px,
-      rgba($color-white, 0.3) 0px 30px 60px -30px;
+    rgba($color-white, 0.3) 0px 30px 60px -30px;
+    cursor: pointer;
 
     @media (max-width: 900px) {
       top: 12rem;
       right: 1rem;
+    }
+
+    @media (max-width: 480px) {
+      top: 4rem;
     }
   }
 }

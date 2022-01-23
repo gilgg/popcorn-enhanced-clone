@@ -2,8 +2,8 @@
 @import "../../scss/fonts";
 
 .details-control {
-  display: flex;
   flex-wrap: wrap;
+  display: flex;
 
   button {
     display: flex;
@@ -40,13 +40,10 @@
   }
 
   .trailer-btn {
-    background-color: rgba(red, 0.8);
-    // background-color: $color-red;
-
     color: $color-white;
+    background-color: rgba(red, 0.8);
 
     &:hover {
-      // background-color: rgba(red, 0.5);
       background-color: $color-red-hover;
     }
   }

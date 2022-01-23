@@ -2,14 +2,14 @@ import React, { useState } from "react";
 import "./Details.scss";
 import { useParams } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
+import useGetFromApi from "../../hooks/useGetFromApi";
+import { isEmpty, getUrl } from "../../helpers/helpers";
+import { movieActions } from "../../store/movieSlice";
 import DetailsBg from "./DetailsBg";
 import DetailsPoster from "./DetailsPoster";
 import DetailsContent from "./DetailsContent";
-import { isEmpty, getUrl } from "../../helpers/helpers";
-import { movieActions } from "../../store/movieSlice";
 import MayAlsoLike from "./MayAlsoLike";
 import TrailerModal from "./trailer/TrailerModal";
-import useGetFromApi from "../../hooks/useGetFromApi";
 
 const Details = () => {
   const dispatch = useDispatch();

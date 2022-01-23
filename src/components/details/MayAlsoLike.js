@@ -1,12 +1,12 @@
 import React, { useEffect, useRef } from "react";
 import "./MayAlsoLike.scss";
 import { useSelector } from "react-redux";
-import { movieActions } from "../../store/movieSlice";
+import useGetFromApi from "../../hooks/useGetFromApi";
 import { isEmpty, getUrl } from "../../helpers/helpers";
-import MovieCard from "../card/MovieCard";
+import { movieActions } from "../../store/movieSlice";
 import { MdKeyboardArrowLeft } from "react-icons/md";
 import { MdKeyboardArrowRight } from "react-icons/md";
-import useGetFromApi from "../../hooks/useGetFromApi";
+import MovieCard from "../card/MovieCard";
 
 const MayAlsoLike = ({ type, mediaId }) => {
   const ref = useRef();

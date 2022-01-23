@@ -1,9 +1,9 @@
 import React, { useState, useRef } from "react";
 import "./MobileParentSubMenu.scss";
+import useCloseModal from "../../../hooks/useCloseModal";
+import { IoMdArrowDropdown } from "react-icons/io";
 import MobileMovieGenreSubMenu from "./MobileMovieGenreSubMenu";
 import MobileSeriesGenreSubMenu from "./MobileSeriesGenreSubMenu";
-import { IoMdArrowDropdown } from "react-icons/io";
-import useCloseModal from "../../../hooks/useCloseModal";
 
 const MobileParentSubMenu = ({
   setToggleMenu,

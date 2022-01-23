@@ -13,21 +13,21 @@
   }
 
   &-icon {
-    color: $color-white;
     font-size: 2.8rem;
+    color: $color-white;
     cursor: pointer;
   }
 
   &-list {
     position: fixed;
-    background-color: rgba($color-theme-bg-color, 0.98);
-    -webkit-overflow-scrolling:touch; // mobile safari
-    height: 1200px;
-    width: 100%;
     top: 85px;
     left: -100%;
-    transition: 0.3s;
+    height: 1200px;
+    width: 100%;
+    background-color: rgba($color-theme-bg-color, 0.98);
     overflow-y: scroll;
+    transition: 0.3s;
+    -webkit-overflow-scrolling:touch; // mobile safari
 
     @media (max-width: 350px) {
       top: 109.5px;
@@ -40,10 +40,10 @@
 }
 
 .mobile-nav-menu-list-item {
-  border-bottom: 1px solid gray;
-  font-size: 2rem;
   display: flex;
   justify-content: center;
+  border-bottom: 1px solid gray;
+  font-size: 2rem;
 
   > a {
     padding: 4rem 0;

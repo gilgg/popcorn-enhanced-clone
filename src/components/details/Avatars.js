@@ -1,8 +1,8 @@
 import React from "react";
 import "./Avatars.scss";
 import Avatar from "./Avatar";
-import { getUrl } from "../../helpers/helpers";
 import useGetFromApi from "../../hooks/useGetFromApi";
+import { getUrl } from "../../helpers/helpers";
 
 const Avatars = ({ type, mediaId }) => {
   const actors = useGetFromApi([], getUrl(type, "actors", mediaId));
