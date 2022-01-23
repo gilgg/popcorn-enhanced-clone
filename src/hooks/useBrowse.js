@@ -10,6 +10,7 @@ import axios from "axios";
 
 const useBrowse = (browseKind) => {
   // The browseKind can be regular, search, or genre
+  console.log("in useBrowse")
   const dispatch = useDispatch();
   const params = useParams();
   const type = getType(params);
