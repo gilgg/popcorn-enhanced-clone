@@ -29,6 +29,13 @@ const movieSlice = createSlice({
     setStateQuery(state, action) {
       state.query = action.payload;
     },
+    setAll(state, action) {
+      // state.totalMedia = action.payload.totalMedia;
+      // state.movies = action.payload.movies;
+      // state.similarMedia = action.payload.similarMedia;
+      // state.query = action.payload.query;
+      return action.payload;
+    },
   },
 });
 

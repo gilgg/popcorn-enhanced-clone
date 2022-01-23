@@ -1,6 +1,8 @@
-import React, { useEffect, useRef, useState } from "react";
+import React, { useRef } from "react";
 import "./TrailerYoutubeVideo.scss";
-import { getTrailerURLFromAPI } from "../../../helpers/helpers";
+import { getUrl } from "../../../helpers/helpers";
+import useGetFromApi from "../../../hooks/useGetFromApi";
+import useCloseModal from "../../../hooks/useCloseModal";
 
 const TrailerYoutubeVideo = ({
   type,
@@ -9,28 +11,9 @@ const TrailerYoutubeVideo = ({
   setToggleModal,
 }) => {
   const ytRef = useRef();
-  const [ytKey, setYtKey] = useState("");
+  useCloseModal(ytRef, setToggleModal);
 
-  useEffect(() => {
-    let handler = (e) => {
-      if (!ytRef.current.contains(e.target)) {
-        setToggleModal(false);
-      }
-    };
-    document.addEventListener("mousedown", handler);
-
-    return () => {
-      document.removeEventListener("mousedown", handler);
-    };
-  });
-
-  useEffect(() => {
-    const getTrailer = async () => {
-      const trailerKey = await getTrailerURLFromAPI(type, mediaId);
-      setYtKey(trailerKey);
-    };
-    getTrailer();
-  }, [mediaId]);
+  const ytKey = useGetFromApi("", getUrl(type, "trailer", mediaId));
 
   return (
     <div className="youtube-video" ref={ytRef}>

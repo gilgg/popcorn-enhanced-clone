@@ -8,7 +8,6 @@ const Browse = ({ browseType }) => {
   const { prevMedias, newMedias } = useBrowse(browseType);
 
   return (
-    // <div className="browse-search">
     <div className="browse">
       {browseType === "search" && isEmpty(prevMedias) && (
         <h1 className="browse-search-no-results">
@@ -16,7 +15,6 @@ const Browse = ({ browseType }) => {
         </h1>
       )}
 
-      {/* <div className="browse-genre-container"> */}
       <div className="browse-container">
         {!isEmpty(prevMedias) &&
           !isEmpty(newMedias) &&

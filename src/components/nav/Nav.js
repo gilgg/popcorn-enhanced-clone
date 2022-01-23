@@ -4,7 +4,6 @@ import { Link } from "react-router-dom";
 import popcornLogo from "../../assets/popcorn-logo.png";
 import SettingsIcons from "./settings/SettingsIcons";
 import NavMenu from "./menu/NavMenu";
-import SearchForm from "./searchForm/SearchForm";
 
 const Nav = () => {
   return (

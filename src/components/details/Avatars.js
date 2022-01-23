@@ -1,19 +1,11 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import "./Avatars.scss";
 import Avatar from "./Avatar";
-import { getActorsFromAPI } from "../../helpers/helpers";
+import { getUrl } from "../../helpers/helpers";
+import useGetFromApi from "../../hooks/useGetFromApi";
 
 const Avatars = ({ type, mediaId }) => {
-  const [actors, setActors] = useState([]);
-
-  useEffect(() => {
-    const getActors = async () => {
-      const actorsArr = await getActorsFromAPI(type, mediaId);
-      setActors(actorsArr);
-    };
-
-    getActors();
-  }, [mediaId]);
+  const actors = useGetFromApi([], getUrl(type, "actors", mediaId));
 
   return (
     <div className="avatars">

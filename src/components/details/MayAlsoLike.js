@@ -1,18 +1,16 @@
-import React, { useEffect, useState, useRef } from "react";
+import React, { useEffect, useRef } from "react";
 import "./MayAlsoLike.scss";
-import { useSelector, useDispatch } from "react-redux";
+import { useSelector } from "react-redux";
 import { movieActions } from "../../store/movieSlice";
-import { isEmpty, getMayAlsoLikeFromAPI } from "../../helpers/helpers";
+import { isEmpty, getUrl } from "../../helpers/helpers";
 import MovieCard from "../card/MovieCard";
 import { MdKeyboardArrowLeft } from "react-icons/md";
 import { MdKeyboardArrowRight } from "react-icons/md";
+import useGetFromApi from "../../hooks/useGetFromApi";
 
 const MayAlsoLike = ({ type, mediaId }) => {
-  const dispatch = useDispatch();
   const ref = useRef();
-  const refScrollX = useRef(0);
   const media = useSelector((state) => state.movie.similarMedia);
-  const [mayAlsoLike, setMayAlsoLike] = useState([]);
 
   const onClickLeftHandler = (e) => {
     e.preventDefault();
@@ -30,17 +28,16 @@ const MayAlsoLike = ({ type, mediaId }) => {
     });
   };
 
+  const mayAlsoLike = useGetFromApi(
+    [],
+    getUrl(type, "similar", mediaId),
+    true,
+    movieActions.addSimilarMedia
+  );
+
   useEffect(() => {
     window.scrollTo(0, 0);
     ref.current.scrollLeft = 0;
-
-    const getMayAlsoLike = async () => {
-      const mayAlsoLikeArr = await getMayAlsoLikeFromAPI(type, mediaId);
-      dispatch(movieActions.addSimilarMedia(mayAlsoLikeArr));
-      setMayAlsoLike(mayAlsoLikeArr);
-    };
-
-    getMayAlsoLike();
   }, [mediaId]);
 
   return (

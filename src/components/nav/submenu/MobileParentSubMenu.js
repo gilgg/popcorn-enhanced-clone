@@ -1,8 +1,9 @@
-import React, { useState, useEffect, useRef } from "react";
+import React, { useState, useRef } from "react";
 import "./MobileParentSubMenu.scss";
 import MobileMovieGenreSubMenu from "./MobileMovieGenreSubMenu";
 import MobileSeriesGenreSubMenu from "./MobileSeriesGenreSubMenu";
 import { IoMdArrowDropdown } from "react-icons/io";
+import useCloseModal from "../../../hooks/useCloseModal";
 
 const MobileParentSubMenu = ({
   setToggleMenu,
@@ -19,18 +20,7 @@ const MobileParentSubMenu = ({
     onClickSetActiveItem();
   };
 
-  useEffect(() => {
-    let handler = (e) => {
-      if (!menuRef.current.contains(e.target)) {
-        setActive(false);
-      }
-    };
-
-    document.addEventListener("mousedown", handler);
-    return () => {
-      document.removeEventListener("mousedown", handler);
-    };
-  });
+  useCloseModal(menuRef, setActive);
 
   return (
     <li

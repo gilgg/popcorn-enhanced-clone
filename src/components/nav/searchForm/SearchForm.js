@@ -1,4 +1,4 @@
-import React, { useRef, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import "./SearchForm.scss";
 import { IoMdArrowDropdown } from "react-icons/io";
 import { useHistory } from "react-router-dom";

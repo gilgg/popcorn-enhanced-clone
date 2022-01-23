@@ -1,8 +1,9 @@
-import React, { useState, useEffect, useRef } from "react";
+import React, { useState, useRef } from "react";
 import "./ParentSubMenu.scss";
 import MovieGenreSubMenu from "./MovieGenreSubMenu";
 import SeriesGenreSubMenu from "./SeriesGenreSubMenu";
 import { IoMdArrowDropdown } from "react-icons/io";
+import useCloseModal from "../../../hooks/useCloseModal";
 
 const ParentSubMenu = ({
   onClickSetActiveItem,
@@ -18,18 +19,7 @@ const ParentSubMenu = ({
     onClickSetActiveItem();
   };
 
-  useEffect(() => {
-    let handler = (e) => {
-      if (!menuRef.current.contains(e.target)) {
-        setActive(false);
-      }
-    };
-
-    document.addEventListener("mousedown", handler);
-    return () => {
-      document.removeEventListener("mousedown", handler);
-    };
-  });
+  useCloseModal(menuRef, setActive);
 
   return (
     <li

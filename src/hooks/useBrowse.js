@@ -3,11 +3,10 @@ import { useParams } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
 import {
   getType,
-  getGenreMediaFromAPI,
-  getQueryMediaFromAPI,
-  getPopularMediaFromAPI,
+  getUrl,
 } from "../helpers/helpers";
 import { movieActions } from "../store/movieSlice";
+import axios from "axios";
 
 const useBrowse = (browseKind) => {
   // The browseKind can be regular, search, or genre
@@ -29,11 +28,13 @@ const useBrowse = (browseKind) => {
     const getMediasArr = async () => {
       let mediasArr;
       if (browseKind === "genre") {
-        mediasArr = await getGenreMediaFromAPI(type, payload);
+        mediasArr = (await axios.get(getUrl(type, "genres", null, payload))).data;
       } else if (browseKind === "search") {
-        mediasArr = await getQueryMediaFromAPI(type, payload);
+        mediasArr = (
+          await axios.get(getUrl(type, "search", null, null, payload))
+        ).data;
       } else {
-        mediasArr = await getPopularMediaFromAPI(type);
+        mediasArr = (await axios.get(getUrl(type, "popular"))).data;
       }
       dispatch(movieActions.addMovies(mediasArr));
       setNewMedias(mediasArr);
