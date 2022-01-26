@@ -1,11 +1,11 @@
 ![Popcorn Banner](https://i.ibb.co/ZBz6xxL/Group-1.png)
 
-# Table of Contents
+# Contents
 
-- [Overview](#overview)
-- [Technologies](#technologies)
-- [Screenshots](#screenshots)
-- [Video](#video)
+- [Overview](#overview-)
+- [Technologies](#technologies-)
+- [Screenshots](#screenshots-)
+- [Video](#video-)
 
 <br />
 
