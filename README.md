@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 ![Popcorn Banner](https://i.ibb.co/ZBz6xxL/Group-1.png)
 
 # Overview 👋
