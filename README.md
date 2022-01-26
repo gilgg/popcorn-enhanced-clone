@@ -2,10 +2,10 @@
 
 # Table of Contents
 
-- [Overview](#overview-👋)
-- [Technologies](#technologies-👨‍💻)
-- [Screenshots](#screenshots-🎮)
-- [Video](#video-🎥)
+- [Overview](#overview)
+- [Technologies](#technologies)
+- [Screenshots](#screenshots)
+- [Video](#video)
 
 <br />
 
@@ -45,4 +45,3 @@ A fully-responsive movie app which allows users to search for their favorite mov
 <br />
 
 # Video 🎥
-
