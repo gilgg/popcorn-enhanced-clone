@@ -1,5 +1,13 @@
-<<<<<<< HEAD
 ![Popcorn Banner](https://i.ibb.co/ZBz6xxL/Group-1.png)
+
+# Table of Contents
+
+- [Overview](#overview-👋)
+- [Technologies](#technologies-👨‍💻)
+- [Screenshots](#screenshots-🎮)
+- [Video](#video-🎥)
+
+<br />
 
 # Overview 👋
 
@@ -7,19 +15,33 @@ A fully-responsive movie app which allows users to search for their favorite mov
 
 > **You can take a look at the backend repo [here](https://github.com/gilgg/popcorn-enhanced-backend)**
 
+<br />
+
 # Technologies 👨‍💻
 
-![React Icon](https://i.ibb.co/Hn15fp4/Group-7.png, "React")
-![Nodejs Icon](https://i.ibb.co/z4nkDzx/Group-1.png, "Nodejs")
-![JavaScript Icon](https://i.ibb.co/ZVZkD7P/Group-4.png, "JavaScript")
-![MongoDB Icon](https://i.ibb.co/yN2cwm4/Group-5.png, "MongoDB")
+![React Icon](https://i.ibb.co/BBFKyz9/Group-9.png, "React")
+![Nodejs Icon](https://i.ibb.co/1KjfZ9L/Group-8.png, "Nodejs")
+![JavaScript Icon](https://i.ibb.co/L5RS8g1/Group-11.png, "JavaScript")
+![MongoDB Icon](https://i.ibb.co/KXG94Kc/Group-10.png, "MongoDB")
 
-# Video & Screenshots 🎮
+<br />
+
+# Screenshots 🎮
 
 ![Popcorn Main](https://i.ibb.co/KXH2NcS/popcorn-1.png)
 
+<br />
+
 ![Popcorn Page](https://i.ibb.co/yFbV54K/popcorn-2.png)
+
+<br />
 
 ![Popcorn May Also Like](https://i.ibb.co/54WsnsR/popcorn-3.png)
 
+<br />
+
 ![Popcorn Trailer](https://i.ibb.co/58Hg3hQ/popcorn-4.png)
+
+<br />
+
+# Video 🎥
