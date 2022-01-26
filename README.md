@@ -1,94 +1,24 @@
-<!-- Headings -->
+![Popcorn Banner](https://i.ibb.co/ZBz6xxL/Group-1.png)
 
-# Heading 1
+# Overview 👋
 
-## Heading 2
+A fully-responsive movie app which allows users to search for their favorite movies / tv shows by text, categories and more. A user can also watch the trailer of the movie he searched for, see the main actors, and movies he may also like. The app is updated daily with fresh and brand new movies that come out to the theaters.
 
-### Heading 3
+> **You can take a look at the backend repo [here](https://github.com/gilgg/popcorn-enhanced-backend)**
 
-#### Heading 4
+# Technologies 👨‍💻
 
-##### Heading 5
+![React Icon](https://i.ibb.co/Hn15fp4/Group-7.png, "React")
+![Nodejs Icon](https://i.ibb.co/z4nkDzx/Group-1.png, "Nodejs")
+![JavaScript Icon](https://i.ibb.co/ZVZkD7P/Group-4.png, "JavaScript")
+![MongoDB Icon](https://i.ibb.co/yN2cwm4/Group-5.png, "MongoDB")
 
-###### Heading 6
+# Video & Screenshots 🎮
 
-<!-- Italics -->
+![Popcorn Main](https://i.ibb.co/KXH2NcS/popcorn-1.png)
 
-\*This text\* is italic
+![Popcorn Page](https://i.ibb.co/yFbV54K/popcorn-2.png)
 
-_This text_ is italic
+![Popcorn May Also Like](https://i.ibb.co/54WsnsR/popcorn-3.png)
 
-<!-- Strong -->
-
-**This text** is strong
-
-**This text** is strong
-
-<!-- Strikethrough -->
-
-~~This text~~ is strikethrough
-
-<!-- Horizontal Rule -->
-
----
-
----
-
-<!-- Blockquote -->
-
-> This is a quote
-
-<!-- Links -->
-
-[Google](https://www.Google.com)
-
-[Traversy Media](https://www.Google.com, "Traversy Media")
-
-<!-- UL -->
-
-* Item 1
-* Item 2
-* Item 3
-  * Nested Item 1
-
-<!-- Ol -->
-1. Item 1
-1. Item 2
-1. Item 3
-
-<!-- Inline Code Block -->
-`<p>This is a paragraph</p>`
-
-<!-- Images -->
-![Markdown Logo](https://markdown-here.com/img/icon256.png)
-
-<!-- Github Markdown -->
-
-<!-- Code Blocks -->
-```bash
-  npm install
-
-  npm start
-```
-
-```javascript
-  function add(num1, num2) {
-    return num1 + num2;
-  }
-```
-
-```python
-  def add(num1, num2):
-    return num1 + num2
-```
-
-<!-- Tables -->
-| Name      | Email          |
-| --------- | -------------- |
-| John Doe  | john@gmail.com |
-| Jane Doe  | jane@gmail.com |
-
-<!-- Task Lists -->
-* [x] Task 1
-* [x] Task 2
-* [ ] Task 3
+![Popcorn Trailer](https://i.ibb.co/58Hg3hQ/popcorn-4.png)
