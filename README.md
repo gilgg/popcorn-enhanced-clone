@@ -15,6 +15,8 @@ A fully-responsive movie app which allows users to search for their favorite mov
 
 > **You can take a look at the backend repo [here](https://github.com/gilgg/popcorn-enhanced-backend)**
 
+> **Go to [Website](https://gil-popcorn-enhanced-clone.netlify.app)**
+
 <br />
 
 # Technologies 👨‍💻
@@ -47,10 +49,3 @@ A fully-responsive movie app which allows users to search for their favorite mov
 # Video 🎥
 
 https://user-images.githubusercontent.com/96532357/151226763-403836e5-a1f2-4e6a-b63f-0338eef4efc5.mp4
-
-
-
-
-
-
-
