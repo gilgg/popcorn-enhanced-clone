@@ -45,3 +45,4 @@ A fully-responsive movie app which allows users to search for their favorite mov
 <br />
 
 # Video 🎥
+
