@@ -45,3 +45,9 @@ A fully-responsive movie app which allows users to search for their favorite mov
 <br />
 
 # Video 🎥
+
+
+
+https://user-images.githubusercontent.com/96532357/151225943-e77939fc-986c-4ab1-b7f1-f3b871096892.mp4
+
+
