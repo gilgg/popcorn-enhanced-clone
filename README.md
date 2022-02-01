@@ -46,7 +46,7 @@ A fully-responsive movie app which allows users to search for their favorite mov
 
 <br />
 
-![Popcorn Trailer](https://i.ibb.co/SBgkM4D/popcorn-4.png)
+![Popcorn Trailer](https://i.ibb.co/KLBqX88/popcorn-4.png)
 
 <br />
 
