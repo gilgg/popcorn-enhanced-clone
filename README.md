@@ -42,7 +42,7 @@ A fully-responsive movie app which allows users to search for their favorite mov
 
 <br />
 
-![Popcorn May Also Like](https://i.ibb.co/JdPd8vX/popcorn-3.png)
+![Popcorn May Also Like](https://i.ibb.co/yPS1NFn/popcorn-3.png)
 
 <br />
 
