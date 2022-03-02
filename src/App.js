@@ -6,26 +6,26 @@ import BrowsePage from "./pages/BrowsePage";
 import useInit from "./hooks/useInit";
 
 const App = () => {
-  useInit();
-  
+  const isLoading = useInit();
+
   return (
     <div className="app">
       <Nav />
       <Switch>
         <Route path="/browse" exact>
-          <BrowsePage browseType="regular" />
+          <BrowsePage browseType="regular" isLoading={isLoading} />
         </Route>
         <Route path="/browse/:type" exact>
-          <BrowsePage browseType="regular" />
+          <BrowsePage browseType="regular" isLoading={isLoading} />
         </Route>
         <Route path="/browse/:type/search/" exact>
           <Redirect to="/browse" />
         </Route>
         <Route path="/browse/:type/search/:query">
-          <BrowsePage browseType="search" />
+          <BrowsePage browseType="search" isLoading={isLoading} />
         </Route>
         <Route path="/browse/:type/:genreName" exact>
-          <BrowsePage browseType="genre" /> 
+          <BrowsePage browseType="genre" isLoading={isLoading} />
         </Route>
         <Route path="/details/:id">
           <DetailsPage />
